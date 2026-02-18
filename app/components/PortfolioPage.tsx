@@ -57,6 +57,13 @@ export default function PortfolioPage() {
       websiteUrl: "https://bosco-bags-6qb4.vercel.app/",
       category: "E-commerce",
     },
+    {
+      id: 5,
+      title: "Breakout Academy",
+      coverImage: "/breakout.png",
+      websiteUrl: "https://www.breakoutacademy.in/",
+      category: "Website",
+    },
   ];
 
   // Concept data for the iframe demo

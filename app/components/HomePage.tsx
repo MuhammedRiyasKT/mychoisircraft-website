@@ -75,9 +75,9 @@ export default function HomePage() {
     },
     {
       id: 3,
-      title: "Zafera Spices (Distributed Company)",
-      coverImage: "/zaferaspices.png",
-      websiteUrl: "https://v0-spice-website-design-rdyx.vercel.app/",
+      title: "Breakout Academy (Traiding Institute)",
+      coverImage: "/breakout.png",
+      websiteUrl: "https://www.breakoutacademy.in/",
       category: "Website"
     }
   ]
