@@ -1,23 +1,21 @@
 "use client"
 
-// 1. Make sure you import the icons you need
 import Image from "next/image"
-import { Check, Phone, Mail, MapPin, ArrowRight, Linkedin, Instagram, Twitter } from "lucide-react"
+import { Check, Phone, Mail, MapPin, ArrowRight, Linkedin, Instagram } from "lucide-react"
 
 interface FooterProps {
   setCurrentPage: (page: string) => void
 }
 
-// Component function name correctly capitalized to 'Footer'
 export default function Footer({ setCurrentPage }: FooterProps) {
-  const quickLinks = [
+  const quickLinks =[
     { id: "about", label: "About Us" },
     { id: "services", label: "Services" },
     { id: "portfolio", label: "Portfolio" },
     { id: "contact", label: "Contact" },
   ]
 
-  const services = [
+  const services =[
     "ERP Systems",
     "Web Development",
     "Mobile Apps",
@@ -26,31 +24,28 @@ export default function Footer({ setCurrentPage }: FooterProps) {
     "Cloud Solutions",
   ]
 
-  const socialLinks = [
+  const socialLinks =[
     { Icon: Mail, href: "mailto:choisircraft@gmail.com", name: "Email" },
     { Icon: Phone, href: "https://api.whatsapp.com/send/?phone=919495257093", name: "WhatsApp" },
-    { Icon: Linkedin, href: "#", name: "LinkedIn" }, // Add your LinkedIn URL
-    { Icon: Instagram, href: "#", name: "Instagram" }, // Add your Instagram URL
+    { Icon: Linkedin, href: "#", name: "LinkedIn" },
+    { Icon: Instagram, href: "#", name: "Instagram" },
   ]
 
   return (
-    <footer className="bg-gradient-to-t from-gray-50 to-white text-gray-800 relative pt-20">
-      {/* Elegant Wave Divider SVG */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="relative block w-full h-[100px] fill-current text-white"
-        >
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-        </svg>
+    <footer className="relative bg-white/40 backdrop-blur-2xl border-t border-white/60 shadow-[0_-8px_30px_rgba(14,158,96,0.05)] text-gray-800 pt-20 overflow-hidden">
+      
+      {/* Decorative Background Blobs for Glass Effect */}
+      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+        <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] rounded-full bg-[#0e9e60]/10 blur-[100px]" />
+        <div className="absolute bottom-[0%] -left-[10%] w-[500px] h-[500px] rounded-full bg-[#0e9e60]/10 blur-[100px]" />
       </div>
+
+      {/* Top glowing accent line */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#0e9e60]/30 to-transparent"></div>
 
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
             {/* Company Info */}
@@ -61,10 +56,10 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                   alt="Choisir Craft Logo"
                   width={150}
                   height={75}
-                  className="h-12 w-auto"
+                  className="h-12 w-auto drop-shadow-sm"
                 />
               </div>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 leading-relaxed mb-6 font-medium">
                 Transforming businesses with cutting-edge technology solutions and innovative digital experiences that drive growth.
               </p>
               <div className="flex space-x-3">
@@ -75,7 +70,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.name}
-                    className="w-10 h-10 bg-sky-100 text-sky-600 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:bg-sky-200"
+                    className="w-10 h-10 bg-white/60 border border-white/60 shadow-sm backdrop-blur-md text-[#0e9e60] rounded-xl flex items-center justify-center transition-all duration-300 transform hover:-translate-y-1 hover:bg-[#0e9e60] hover:text-white hover:border-[#0e9e60] hover:shadow-[0_8px_20px_rgba(14,158,96,0.3)]"
                   >
                     <social.Icon className="w-5 h-5" />
                   </a>
@@ -85,7 +80,8 @@ export default function Footer({ setCurrentPage }: FooterProps) {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-6 border-l-4 border-sky-500 pl-4">
+              <h4 className="text-lg font-bold text-gray-800 mb-6 flex items-center">
+                <span className="w-1.5 h-6 bg-[#0e9e60] rounded-full mr-3"></span>
                 Quick Links
               </h4>
               <div className="space-y-3">
@@ -93,10 +89,10 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                   <button
                     key={link.id}
                     onClick={() => setCurrentPage(link.id)}
-                    className="flex items-center text-gray-600 hover:text-sky-600 transition-all duration-300 group"
+                    className="flex items-center text-gray-600 font-medium hover:text-[#0e9e60] transition-all duration-300 group w-full"
                   >
-                    <ArrowRight className="w-4 h-4 mr-2 text-sky-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1" />
-                    {link.label}
+                    <ArrowRight className="w-4 h-4 mr-2 text-[#0e9e60] opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0" />
+                    <span className="transform -translate-x-6 group-hover:translate-x-0 transition-all duration-300">{link.label}</span>
                   </button>
                 ))}
               </div>
@@ -104,13 +100,16 @@ export default function Footer({ setCurrentPage }: FooterProps) {
 
             {/* Services */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-6 border-l-4 border-sky-500 pl-4">
+              <h4 className="text-lg font-bold text-gray-800 mb-6 flex items-center">
+                <span className="w-1.5 h-6 bg-[#0e9e60] rounded-full mr-3"></span>
                 Our Services
               </h4>
               <div className="space-y-3">
                 {services.map((service) => (
-                  <div key={service} className="flex items-center text-gray-600">
-                    <Check className="w-4 h-4 text-sky-500 mr-2 flex-shrink-0" />
+                  <div key={service} className="flex items-center text-gray-600 font-medium group cursor-default hover:text-[#0e9e60] transition-colors duration-300">
+                    <div className="w-6 h-6 rounded-full bg-white/50 border border-white/60 shadow-sm flex items-center justify-center mr-3 group-hover:bg-[#0e9e60] transition-colors duration-300">
+                      <Check className="w-3.5 h-3.5 text-[#0e9e60] group-hover:text-white transition-colors duration-300" />
+                    </div>
                     {service}
                   </div>
                 ))}
@@ -119,38 +118,39 @@ export default function Footer({ setCurrentPage }: FooterProps) {
 
             {/* Contact Info */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-6 border-l-4 border-sky-500 pl-4">
+              <h4 className="text-lg font-bold text-gray-800 mb-6 flex items-center">
+                <span className="w-1.5 h-6 bg-[#0e9e60] rounded-full mr-3"></span>
                 Get in Touch
               </h4>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {/* Phone Section */}
-                <div className="flex items-start space-x-3 group">
-                  <div className="w-10 h-10 bg-sky-100 text-sky-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-sky-200 transition-all duration-300">
+                <div className="flex items-center space-x-4 group">
+                  <div className="w-11 h-11 bg-white/60 border border-white/60 shadow-sm backdrop-blur-md text-[#0e9e60] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#0e9e60] group-hover:text-white group-hover:border-[#0e9e60] transition-all duration-300">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-gray-500 text-sm">Phone</p>
-                    <p className="text-gray-700 group-hover:text-sky-600 transition-colors duration-300">+91 94952 57093</p>
+                    <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-0.5">Phone</p>
+                    <p className="text-gray-700 font-medium group-hover:text-[#0e9e60] transition-colors duration-300">+91 94952 57093</p>
                   </div>
                 </div>
                 {/* Email Section */}
-                <div className="flex items-start space-x-3 group">
-                  <div className="w-10 h-10 bg-sky-100 text-sky-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-sky-200 transition-all duration-300">
+                <div className="flex items-center space-x-4 group">
+                  <div className="w-11 h-11 bg-white/60 border border-white/60 shadow-sm backdrop-blur-md text-[#0e9e60] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#0e9e60] group-hover:text-white group-hover:border-[#0e9e60] transition-all duration-300">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-gray-500 text-sm">Email</p>
-                    <p className="text-gray-700 group-hover:text-sky-600 transition-colors duration-300">choisircraft@gmail.com</p>
+                    <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-0.5">Email</p>
+                    <p className="text-gray-700 font-medium group-hover:text-[#0e9e60] transition-colors duration-300">choisircraft@gmail.com</p>
                   </div>
                 </div>
                 {/* Location Section */}
-                <div className="flex items-start space-x-3 group">
-                  <div className="w-10 h-10 bg-sky-100 text-sky-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-sky-200 transition-all duration-300">
+                <div className="flex items-center space-x-4 group">
+                  <div className="w-11 h-11 bg-white/60 border border-white/60 shadow-sm backdrop-blur-md text-[#0e9e60] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#0e9e60] group-hover:text-white group-hover:border-[#0e9e60] transition-all duration-300">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-gray-500 text-sm">Location</p>
-                    <p className="text-gray-700">Kerala, India</p>
+                    <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-0.5">Location</p>
+                    <p className="text-gray-700 font-medium group-hover:text-[#0e9e60] transition-colors duration-300">Kerala, India</p>
                   </div>
                 </div>
               </div>
@@ -159,15 +159,15 @@ export default function Footer({ setCurrentPage }: FooterProps) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200">
+        <div className="border-t border-white/60 bg-white/20 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center text-sm">
+            <div className="flex flex-col md:flex-row justify-between items-center text-sm font-medium">
               <p className="text-gray-500 mb-4 md:mb-0">
                 © {new Date().getFullYear()} Choisir Craft. All rights reserved.
               </p>
-              <div className="flex space-x-6">
-                <a href="#" className="text-gray-500 hover:text-sky-600 transition-colors duration-300">Privacy Policy</a>
-                <a href="#" className="text-gray-500 hover:text-sky-600 transition-colors duration-300">Terms of Service</a>
+              <div className="flex space-x-8">
+                <a href="#" className="text-gray-500 hover:text-[#0e9e60] transition-colors duration-300">Privacy Policy</a>
+                <a href="#" className="text-gray-500 hover:text-[#0e9e60] transition-colors duration-300">Terms of Service</a>
               </div>
             </div>
           </div>
@@ -176,4 +176,3 @@ export default function Footer({ setCurrentPage }: FooterProps) {
     </footer>
   )
 }
-

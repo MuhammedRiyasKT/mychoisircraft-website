@@ -353,7 +353,7 @@ ${formData.message}
               <div className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-3xl p-8 border border-green-200">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Get Started?</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Join 30+ satisfied clients who have transformed their businesses with our innovative solutions.
+                  Join 6+ satisfied clients who have transformed their businesses with our innovative solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a

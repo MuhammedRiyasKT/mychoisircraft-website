@@ -147,7 +147,7 @@ export default function PortfolioPage() {
                 <div className="text-gray-600">Client Satisfaction</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gray-900">3+</div>
+                <div className="text-3xl font-bold text-gray-900">1+</div>
                 <div className="text-gray-600">Years Experience</div>
               </div>
             </div>

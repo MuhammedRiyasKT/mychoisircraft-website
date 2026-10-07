@@ -13,8 +13,8 @@ export default function AboutPage() {
   })
 
   const stats = [
-    { number: 10, label: "Projects Completed", icon: <Award className="w-8 h-8" /> },
-    { number: 5, label: "Happy Clients", icon: <Users className="w-8 h-8" /> },
+    { number: 6, label: "Projects Completed", icon: <Award className="w-8 h-8" /> },
+    { number: 6, label: "Happy Clients", icon: <Users className="w-8 h-8" /> },
     { number: 1, label: "Years Experience", icon: <Clock className="w-8 h-8" /> },
     { number: 24, label: "24/7 Support", icon: <Shield className="w-8 h-8" /> },
   ]

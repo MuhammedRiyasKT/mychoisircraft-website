@@ -132,72 +132,88 @@ export default function HomePage() {
       `}</style>
 
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 overflow-hidden px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center w-full">
-          {/* Right Content: IMAGE FIRST on Mobile */}
-          <div className="relative h-[500px] lg:h-[600px] w-full flex items-center justify-center order-1 lg:order-2">
-            <div className="absolute w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-green-500 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="mt-[-20px] lg:mt-[-120px] relative z-10 h-full flex items-end justify-center">
-              <img
-                src="/hero-slider.png"
-                alt="Software Developer"
-                className="w-full h-full object-cover drop-shadow-2xl"
-              />
+     <section className="relative min-h-[90vh] flex items-center bg-[#fafcfa] overflow-hidden px-4 sm:px-6 lg:px-8">
+      
+      {/* Ambient Glass UI Background Elements */}
+      <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+      <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[#0e9e60]/10 blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#0e9e60]/10 blur-[120px] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center w-full relative z-10">
+        {/* Right Content: IMAGE FIRST on Mobile */}
+        <div className="relative h-[500px] lg:h-[600px] w-full flex items-center justify-center order-1 lg:order-2">
+          
+          {/* Main Backdrop Orb (Maintains exact size, updated to modern gradient) */}
+          <div className="absolute w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-gradient-to-tr from-[#0e9e60] to-[#20c982] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_80px_rgba(14,158,96,0.25)]"></div>
+          
+          <div className="mt-[-20px] lg:mt-[-120px] relative z-10 h-full flex items-end justify-center">
+            <img
+              src="/hero-slider.png"
+              alt="Software Developer"
+              className="w-full h-full object-cover drop-shadow-[0_20px_40px_rgba(14,158,96,0.15)]"
+            />
+          </div>
+
+          {/* Floating Glass Widgets (Maintained exact positioning and sizing) */}
+          <div className="absolute top-16 left-0 md:left-10 bg-white/70 backdrop-blur-xl border border-white/50 p-3 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] z-20 animate-float-slow max-w-[140px]">
+            <div className="flex justify-between items-center mb-2">
+              <div className="w-2 h-2 rounded-full bg-[#0e9e60]"></div>
+              <div className="h-1 w-10 bg-slate-200 rounded"></div>
             </div>
-            {/* Floating Widgets... */}
-            <div className="absolute top-16 left-0 md:left-10 bg-white p-3 rounded-xl shadow-xl z-20 animate-float-slow max-w-[140px]">
-              <div className="flex justify-between items-center mb-2">
-                <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                <div className="h-1 w-10 bg-gray-200 rounded"></div>
-              </div>
-              <div className="flex items-end gap-1 h-10 border-b border-gray-100 pb-1">
-                <Activity className="text-green-600" />
-              </div>
-            </div>
-            <div className="absolute top-20 right-0 md:right-10 bg-white p-4 rounded-xl shadow-xl z-20 animate-float-delayed">
-              <div className="flex flex-col items-center gap-2">
-                <PieChart className="w-10 h-10 text-green-600" />
-                <div className="h-2 w-16 bg-gray-100 rounded"></div>
-                <div className="h-1 w-12 bg-gray-100 rounded"></div>
-              </div>
-            </div>
-            <div className="absolute bottom-20 left-0 md:left-12 bg-white p-4 rounded-2xl shadow-xl z-20 animate-float-slow w-48">
-              <h4 className="font-bold text-sm text-slate-800 mb-3">Performance</h4>
-              <div className="flex items-end justify-between gap-2 h-12">
-                <div className="w-3 bg-green-200 rounded-t-md h-[40%]"></div>
-                <div className="w-3 bg-emerald-300 rounded-t-md h-[60%]"></div>
-                <div className="w-3 bg-green-600 rounded-t-md h-[100%]"></div>
-                <div className="w-3 bg-emerald-300 rounded-t-md h-[50%]"></div>
-                <div className="w-3 bg-green-200 rounded-t-md h-[30%]"></div>
-                <div className="w-3 bg-green-600 rounded-t-md h-[80%]"></div>
-              </div>
-            </div>
-            <div className="absolute bottom-32 right-0 md:-right-4 bg-white/90 backdrop-blur px-4 py-3 rounded-full shadow-xl z-20 animate-float-delayed flex items-center gap-3">
-              <div className="h-2 w-24 bg-gray-200 rounded-full overflow-hidden">
-                <div className="h-full w-[70%] bg-green-600 rounded-full"></div>
-              </div>
+            <div className="flex items-end gap-1 h-10 border-b border-slate-200/60 pb-1">
+              <Activity className="text-[#0e9e60]" />
             </div>
           </div>
 
-          {/* Left Content: TEXT SECOND on Mobile */}
-          <div className="mt-[-60px] space-y-8 z-10 pt-10 lg:pt-0 order-2 lg:order-1">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
-              Future-Ready <br />
-              Software <br />
-              Development
-            </h1>
-            <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
-              We engineer robust, scalable, and innovative digital solutions tailored
-              to your business goals. Transform your ideas into reality with our expert team.
-            </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <button onClick={handleStartProject} className="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-full font-semibold shadow-lg shadow-green-200 transition-all hover:scale-105">
-                Start Your Project
-              </button>
+          <div className="absolute top-20 right-0 md:right-10 bg-white/70 backdrop-blur-xl border border-white/50 p-4 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] z-20 animate-float-delayed">
+            <div className="flex flex-col items-center gap-2">
+              <PieChart className="w-10 h-10 text-[#0e9e60]" />
+              <div className="h-2 w-16 bg-slate-200/80 rounded"></div>
+              <div className="h-1 w-12 bg-slate-200/80 rounded"></div>
+            </div>
+          </div>
+
+          <div className="absolute bottom-20 left-0 md:left-12 bg-white/70 backdrop-blur-xl border border-white/50 p-4 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] z-20 animate-float-slow w-48">
+            <h4 className="font-bold text-sm text-slate-700 mb-3">Performance</h4>
+            <div className="flex items-end justify-between gap-2 h-12">
+              <div className="w-3 bg-[#0e9e60]/30 rounded-t-md h-[40%] hover:bg-[#0e9e60]/60 transition-colors"></div>
+              <div className="w-3 bg-[#0e9e60]/50 rounded-t-md h-[60%] hover:bg-[#0e9e60]/80 transition-colors"></div>
+              <div className="w-3 bg-[#0e9e60] rounded-t-md h-[100%] shadow-[0_0_8px_rgba(14,158,96,0.4)]"></div>
+              <div className="w-3 bg-[#0e9e60]/70 rounded-t-md h-[50%] hover:bg-[#0e9e60]/90 transition-colors"></div>
+              <div className="w-3 bg-[#0e9e60]/40 rounded-t-md h-[30%] hover:bg-[#0e9e60]/70 transition-colors"></div>
+              <div className="w-3 bg-[#0e9e60]/90 rounded-t-md h-[80%] hover:bg-[#0e9e60] transition-colors"></div>
+            </div>
+          </div>
+
+          <div className="absolute bottom-32 right-0 md:-right-4 bg-white/80 backdrop-blur-xl border border-white/50 px-4 py-3 rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.08)] z-20 animate-float-delayed flex items-center gap-3">
+            <div className="h-2 w-24 bg-slate-200/80 rounded-full overflow-hidden">
+              <div className="h-full w-[70%] bg-[#0e9e60] rounded-full"></div>
             </div>
           </div>
         </div>
-      </section>
+
+        {/* Left Content: TEXT SECOND on Mobile (Maintained exact margins/structure) */}
+        <div className="mt-[-60px] space-y-8 z-10 pt-10 lg:pt-0 order-2 lg:order-1">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
+            Future-Ready <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0e9e60] to-[#0a7a4a]">Software</span> <br />
+            Development
+          </h1>
+          <p className="text-lg text-slate-600 max-w-lg leading-relaxed">
+            We engineer robust, scalable, and innovative digital solutions tailored
+            to your business goals. Transform your ideas into reality with our expert team.
+          </p>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <button 
+              onClick={handleStartProject} 
+              className="bg-[#0e9e60] hover:bg-[#0a7a4a] text-white px-10 py-4 rounded-full font-semibold shadow-[0_8px_20px_rgba(14,158,96,0.25)] transition-all hover:scale-105"
+            >
+              Start Your Project
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>  
 
       {/* 2. NEW REIMAGINED SERVICES SECTION */}
       <section id="services" className="py-20 md:py-24 bg-white">
