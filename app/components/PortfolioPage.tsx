@@ -26,14 +26,14 @@ export default function PortfolioPage() {
       id: 1,
       title: "Adstudio",
       coverImage: "/adstudios.png",
-      websiteUrl: "https://adstudios.in/",
+      websiteUrl: "https://adconcepts.in/",
       category: "E-commerce",
     },
     {
       id: 2,
       title: "BakeCity Hyper",
       coverImage: "/bakecity.png",
-      websiteUrl: "https://bakecityhyper.com/",
+      websiteUrl: "https://sirajbinsyed.github.io/bakecity/",
       category: "Website",
     },
     {
