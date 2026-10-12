@@ -24,41 +24,48 @@ export default function PortfolioPage() {
   const projects = [
     {
       id: 1,
+      title: "Amaze-ads",
+      coverImage: "/erpsoftware.png",
+      websiteUrl: "https://amazeads-frontend-v8bu.vercel.app/login",
+      category: "ERP-Software",
+    },
+    {
+      id: 2,
       title: "Adstudio",
       coverImage: "/adstudios.png",
       websiteUrl: "https://adconcepts.in/",
       category: "E-commerce",
     },
     {
-      id: 2,
+      id: 3,
       title: "BakeCity Hyper",
       coverImage: "/bakecity.png",
       websiteUrl: "https://sirajbinsyed.github.io/bakecity/",
       category: "Website",
     },
     {
-      id: 3,
+      id: 4,
       title: "Amaze-ads",
       coverImage: "/amazeads.png",
       websiteUrl: "https://www.amazeads.in/",
       category: "Website",
     },
     {
-      id: 4,
+      id: 5,
       title: "Zafera Spices",
       coverImage: "/zaferaspices.png",
       websiteUrl: "https://v0-spice-website-design-rdyx.vercel.app/",
       category: "Website",
     },
     {
-      id: 5,
+      id: 6,
       title: "Bosco Bags",
       coverImage: "/boscobags.png",
       websiteUrl: "https://bosco-bags-6qb4.vercel.app/",
       category: "E-commerce",
     },
     {
-      id: 5,
+      id: 7,
       title: "Breakout Academy",
       coverImage: "/breakout.png",
       websiteUrl: "https://www.breakoutacademy.in/",
@@ -181,17 +188,28 @@ export default function PortfolioPage() {
               >
 
                 {/* Category Badge */}
-                <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm">
+                <div className="absolute top-3 right-3 z-10 bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-xs font-semibold shadow-sm">
                   {project.category}
                 </div>
 
-                {/* Image Container - Full height and width */}
-                <div className="relative w-full aspect-[4/3] overflow-hidden">
+                {/* Image Container - Displays full image without cropping */}
+                <div className="relative w-full aspect-[16/9] overflow-hidden bg-slate-100 flex items-center justify-center">
+                  {/* Ambient blurred backdrop so the card is fully covered with matching colors */}
+                  <Image
+                    src={project.coverImage || defaultImage}
+                    alt=""
+                    fill
+                    aria-hidden="true"
+                    className="object-cover blur-xl scale-125 opacity-30 select-none pointer-events-none"
+                  />
+
+                  {/* Foreground Image - Shows 100% full image in its original proportions */}
                   <Image
                     src={project.coverImage || defaultImage}
                     alt={project.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-500 ease-out z-[1]"
                     onError={(e) => {
                       const img = e.target as HTMLImageElement;
                       img.srcset = defaultImage;
@@ -200,12 +218,12 @@ export default function PortfolioPage() {
                   />
                   
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-[2]"></div>
                   
                   {/* Hover Action Indicator */}
-                  <div className="absolute bottom-4 right-4 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
-                      <ExternalLink className="w-5 h-5 text-gray-700" />
+                  <div className="absolute bottom-3 right-3 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-[3]">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-full p-2.5 shadow-lg text-gray-700">
+                      <ExternalLink className="w-4 h-4" />
                     </div>
                   </div>
                 </div>
